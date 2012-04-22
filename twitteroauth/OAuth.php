@@ -1,11 +1,13 @@
 <?php
+namespace twitteroauth;
+
 // vim: foldmethod=marker
 
 /* Generic exception class
  * It is conditionally declared to avoid conflicting with the one declared in the php OAuth extension.
  */
 if(!class_exists('OAuthException',false)) {
-    class OAuthException extends Exception {
+    class OAuthException extends \Exception {
       // pass
     }
 }
@@ -721,7 +723,7 @@ class OAuthDataStore {
 class OAuthUtil {
   public static function urlencode_rfc3986($input) {
   if (is_array($input)) {
-    return array_map(array('OAuthUtil', 'urlencode_rfc3986'), $input);
+    return array_map(array('\twitteroauth\OAuthUtil', 'urlencode_rfc3986'), $input);
   } else if (is_scalar($input)) {
     return str_replace(
       '+',

@@ -1,5 +1,5 @@
 <?php
-
+namespace twitteroauth;
 /*
  * Abraham Williams (abraham@abrah.am) http://abrah.am
  *
